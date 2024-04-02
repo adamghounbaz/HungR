@@ -1,0 +1,62 @@
+﻿/*Changing the font of the entire page, setting the margin to 0 and centering the text*/
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+/*Changing the padding of the divs*/
+div{
+    padding: 0 10%;
+}
+
+/*Underlining the h3 texts*/
+h3{
+    text-decoration: underline;
+}
+
+/*Changing the color of all links to black and removing the text underline from the link*/
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/*Changing the color of the links when a cursor hovers over them*/
+a:hover{
+    color: darkgray;
+}
+
+/*Adding a background color to the header and changing the text color of the title*/
+#header{
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    margin-bottom: 40px;
+}
+
+/*Changing the background color of the footer and changing the text color to white*/
+#footer{
+    background-color:#333;
+    color: white;
+    padding: 10px;
+}
+
+/*Changing the text color of the links within the footer and underlining them*/
+#footer a{
+    color: lightgrey;
+    padding: 10px;  
+    text-decoration: underline;
+}
+
+/*Changing the text color of the links within the footer to white whenever a curosr hovers over them*/
+#footer a:hover{
+    color: white;
+}
+
+/*Style for the logo provided by student 2*/
+.logo {
+    width: 200px;
+    position: absolute;
+    top: 200px;
+    left: 20px;
+}

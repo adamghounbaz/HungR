@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Set Up A Profile</title>
+
+    <link rel="stylesheet" href="Stylesheets/profile.css" />
+</head>
+<body>
+    <!--Navbar containg links to different webpage's-->
+    <div class="navbar" id="mainNav">
+        <a href="https://w1971490.users.ecs.westminster.ac.uk/HungR/Home.html">Home</a>
+        <a href="profile.html">User Profile</a>
+        <a href="team.html">Teams Page</a>
+        <a href="">Shop</a>
+        <a href="https://w1974891.users.ecs.westminster.ac.uk/HungR/gallery.html">Gallery</a>
+        <a href="https://w1971490.users.ecs.westminster.ac.uk/HungR/FeedBack.html">Feedback</a>
+        <a href="https://w1974891.users.ecs.westminster.ac.uk/HungR/sitemap.html">Sitemap</a>
+    </div>
+
+    <!--Header containg website's logo and title of the webpage-->
+    <div id="header">
+        <img src="Images/logo.png" class="logo" alt="Zero Hunger"/><h1 id="title">Set Up Your Profile</h1>
+    </div>
+    
+    <!--Start button that shows the rest of the webpage after clicking on it-->
+    <button id="start" onclick="showPrompt()">Create Your Profile</button>
+
+    <!--Progress bar with a text underneath it outputting the percentage of questions completed-->
+    <div id="progressInfo" class="hidden">
+        <div id="progressBorder">
+            <div id="progressFill"></div>
+        </div>
+
+        <span id="percentageCompleted"></span>
+    </div>
+
+    <!--Div containg what step the user is on, the question, text box, skip button and next button-->
+    <div class="hidden" id="stepDiv">
+
+        <h2 id="step"></h2>
+
+        <div>
+            <span id="question"></span>
+
+            <br />
+
+            <input id="prompt" />
+            <br><br />
+            <button class="skip" onclick="skipQuestion()">Skip</button>
+            <button class="next" onclick="nextQuestion()">Next</button><!--Saves the user's input to an array and moves to the next question-->
+        </div>
+    </div>
+
+    <br />
+    <!--Divs containing the title of this section, user's input, edit button and save button-->
+    <div id="profile">
+        <div id="userInfo" class=hidden>
+            <h3><span id="userInfoTitle"></span></h3><!--Title of section-->
+
+            <span id="question1"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(0)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(0)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+
+            <br /><br />
+
+            <span id="question2"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(1)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(1)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+
+            <span id="question3"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(2)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(2)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+
+            <span id="question4"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(3)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(3)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+        </div>
+
+        <div id="volunteeringTasks" class=hidden>
+            <h3><span id="volunteeringTasksTitle"></span></h3><!--Title of section-->
+
+            <span id="question5"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(4)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(4)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+
+            <span id="question6"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(5)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(5)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+
+            <span id="question7"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(6)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(6)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+
+            <span id="question8"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(7)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(7)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+        </div>
+
+        <div id="qualifications" class=hidden>
+            <h3><span id="qualificationsTitle"></span></h3><!--Title of section-->
+
+            <span id="question9"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(8)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(8)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+
+            <span id="question10"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(9)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(9)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+
+            <span id="question11"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(10)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(10)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+
+            <span id="question12"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(11)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(11)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+        </div>
+
+        <div id="contactInfo" class=hidden>
+            <h3><span id="contactInfoTitle"></span></h3><!--Title of section-->
+
+            <span id="question13"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(12)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(12)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+
+            <span id="question14"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(13)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(13)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+
+            <span id="question15"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(14)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(14)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+
+            <span id="question16"></span><!--User's answer to question'-->
+
+            <button onclick="editProfile(15)" class="hidden edit">Edit</button><!--Edit button, allowing user to change their input-->
+            <input class="hidden editPrompt" /><!--Text box for user to type out their new answer-->
+            <button onclick="saveChanges(15)" class="hidden save">Save</button><!--Save button, saving user's new answer to the array and replacing their previous answer-->
+            <br /><br />
+        </div>
+    </div>
+
+    <!--Webpage's footer containg link to my content page and page editor-->
+    <div id="footer">
+        <p>User Profile Page | Designed by Adam Ghounbaz 2024</p>
+        <br />
+        <a href="content_ST3.html">Content Page</a>
+        <a href="pageEditor_ST3.html" target="_blank">Page Editor</a>
+    </div>
+
+
+
+    <!--JavaScript-->
+    <script>
+        //Declaring arrays
+        const questions = ["First Name", "Second Name", "Age", "Gender", "Reasons", "Task", "Location", "Experience", "Area of study", "Highest degree", "University/Institution", "Graduation year", "Availability", "Telephone", "Email", "Address"];
+        const steps = ["Personal details", "Volunteering tasks", "Qualifications", "Availability and contact"]
+        let answers = [];
+
+        //Declaring counters
+        let questionNum = 0;
+        let stepNum = 0;
+        let answeredQuestions = 0;
+        let percentageCompleted = 0;
+
+        //Outputting initial set of questions and information to user
+        document.getElementById("percentageCompleted").innerHTML = percentageCompleted + "%" + " completed";
+        document.getElementById("step").innerHTML = "STEP " + (stepNum + 1) + " " + steps[stepNum] + " | Question " + (questionNum - (stepNum * 4) + 1) + "/4";
+        document.getElementById("question").innerHTML = questions[questionNum];
+
+        //Function for start button showing divs that allow users to input their information, hides the start button
+        function showPrompt() {
+            document.getElementById("stepDiv").classList.remove("hidden");
+            document.getElementById("userInfo").classList.remove("hidden");
+            document.getElementById("start").classList.add("hidden");
+            document.getElementById("progressInfo").classList.remove("hidden");
+
+            document.getElementById("start").style.display = "none";
+        }
+
+        //Function for saving user's input to array and outputing it back, updating progress information, and displaying the next question/step'
+        function nextQuestion() {
+            //Saving user's input and resetting value inside the text box
+            const input = document.getElementById("prompt").value;
+            document.getElementById("prompt").value = "";
+
+            answers.push(input);
+            console.log("Answers:", answers);
+
+            //Updating progress information if user inputs an answer instead of leaving it blank
+            if (input != "") {
+                answeredQuestions++//Increments by 1 whenever a user answers a question
+                percentageCompleted = Math.round(answeredQuestions * 6.25);//Maths equation to convert total number of questions completed to a percentage
+
+                //Displaying progress information and updating progress bar
+                document.getElementById("progressFill").style.width = percentageCompleted + "%";
+                document.getElementById("percentageCompleted").innerHTML = percentageCompleted + "%" + " completed";
+            }
+
+            //Chnaging the title of the steps when user reaches a new step
+            if (stepNum == 1) {
+                document.getElementById("userInfo").classList.add("hidden");
+                document.getElementById("volunteeringTasks").classList.remove("hidden");
+            }
+            else if (stepNum == 2) {
+                document.getElementById("volunteeringTasks").classList.add("hidden");
+                document.getElementById("qualifications").classList.remove("hidden");
+            }
+            else if (stepNum == 3) {
+                document.getElementById("qualifications").classList.add("hidden");
+                document.getElementById("contactInfo").classList.remove("hidden");
+            }
+
+            document.getElementById("question" + (questionNum + 1)).innerHTML = questions[questionNum] + ": " + answers[questionNum];//Displaying answered question with the user's input
+
+            questionNum++//Increments by 1 whenever a user moves to the next question
+
+            //Increments the stepNum by 1 for every 4 questions the user answers
+            if (questionNum % 4 == 0) {
+                stepNum++
+            }
+
+            //Runs the completedProfile function when the user has answered all 16 questions
+            if (answers.length == 16) {
+                document.getElementById("stepDiv").classList.add("hidden");
+                completedProfile();
+            }
+
+            //Updates the step and question
+            document.getElementById("step").innerHTML = "STEP " + (stepNum + 1) + " " + steps[stepNum] + " | Question " + (questionNum + 1 - (stepNum * 4)) + "/4";
+            document.getElementById("question").innerHTML = questions[questionNum];
+        }
+
+        //Function for skipping a question
+        function skipQuestion() {
+            //Adds a blank answer to the array
+            answers.push("");
+            console.log(answers);
+
+            //Chnaging the title of the steps when user reaches a new step
+            if (stepNum == 1) {
+                document.getElementById("userInfo").classList.add("hidden");
+                document.getElementById("volunteeringTasks").classList.remove("hidden");
+            }
+            else if (stepNum == 2) {
+                document.getElementById("volunteeringTasks").classList.add("hidden");
+                document.getElementById("qualifications").classList.remove("hidden");
+            }
+            else if (stepNum == 3) {
+                document.getElementById("qualifications").classList.add("hidden");
+                document.getElementById("contactInfo").classList.remove("hidden");
+            }
+            else if (stepNum == 4) {
+                document.getElementById("qualifications").classList.add("hidden");
+            }
+
+            document.getElementById("question" + (questionNum + 1)).innerHTML = questions[questionNum] + ": " + answers[questionNum];//Displaying answered question with the user's input
+
+            questionNum++//Increments the number of questions answered by 1
+
+            //Increments the stepNum by 1 for every 4 questions the user answers
+            if (questionNum % 4 == 0) {
+                stepNum++
+            }
+
+            //Runs the completedProfile function when the user has answered all 16 questions
+            if (answers.length == 16) {
+                document.getElementById("stepDiv").classList.add("hidden");
+
+                completedProfile();
+            }
+
+            //Updates the step and question
+            document.getElementById("step").innerHTML = "STEP " + (stepNum + 1) + " " + steps[stepNum] + " | Question " + (questionNum - (stepNum * 4) + 1) + "/4";
+            document.getElementById("question").innerHTML = questions[questionNum];
+        }
+
+        //Function for adjusting the page to show all sections
+        function completedProfile() {
+            document.getElementById("userInfo").classList.add("completed");
+            document.getElementById("qualifications").classList.add("completed");
+            document.getElementById("volunteeringTasks").classList.add("completed");
+            document.getElementById("contactInfo").classList.add("completed");
+
+            document.getElementById("userInfo").classList.remove("hidden");
+            document.getElementById("qualifications").classList.remove("hidden");
+            document.getElementById("volunteeringTasks").classList.remove("hidden");
+            document.getElementById("contactInfo").classList.remove("hidden");
+
+            document.getElementById("userInfoTitle").innerHTML = steps[0]
+            document.getElementById("volunteeringTasksTitle").innerHTML = steps[1]
+            document.getElementById("qualificationsTitle").innerHTML = steps[2]
+            document.getElementById("contactInfoTitle").innerHTML = steps[3]
+
+            document.getElementById("title").innerHTML = "Check Your Details";
+
+            //Displaying all the edit buttons to the user next to each answer
+            let editButtons = document.getElementsByClassName("edit");
+            for (let i = 0; i < editButtons.length; i++) {
+                editButtons[i].classList.remove("hidden");
+            }
+        }
+
+        //Function for the edit button to display both the text box and save button
+        function editProfile(questionNumber) {
+            console.log("Question being edited: " + questionNumber);//Outputs what question is being edited to the console for debugging
+
+            //Declaring variables that store all the edit, text boxes and save buttons
+            let editButtons = document.getElementsByClassName("edit");
+            let editPrompts = document.getElementsByClassName("editPrompt");
+            let saveButtons = document.getElementsByClassName("save");
+
+            //Hides all the edit buttons
+            for (let i = 0; i < editButtons.length; i++) {
+                editButtons[i].classList.add("hidden");
+            }
+
+            //Only displays the text box and save button for the question being edited
+            editPrompts[questionNumber].classList.remove("hidden");
+            saveButtons[questionNumber].classList.remove("hidden");
+
+            //Displays the user's previous answer in the text box if they wish to edit it
+            document.getElementById("question" + (questionNumber + 1)).innerHTML = questions[questionNumber] + ": ";
+            editPrompts[questionNumber].value = answers[questionNumber];
+        }
+
+        //Function for the save button to replace the user's previous answer with their new one
+        function saveChanges(questionNumber) {
+            console.log("Question being saved: " + questionNumber);//Outputs what question is being edited to the console for debugging
+
+            //Declaring variables that store all the edit, text boxes and save buttons
+            let editButtons = document.getElementsByClassName("edit");
+            let editPrompts = document.getElementsByClassName("editPrompt");
+            let saveButtons = document.getElementsByClassName("save");
+
+            //Shows all the edit buttons and hides the save button as well as the text box
+            for (let i = 0; i < editButtons.length; i++) {
+                editButtons[i].classList.remove("hidden");
+                editPrompts[i].classList.add("hidden");
+                saveButtons[i].classList.add("hidden");
+            }
+
+            //Only updates the progress information if the user's previous answer is blank or null and if the user's new answer is not equal to the user's previous answer
+            if (answers[questionNumber] == "" || answers[questionNumber] == null) {
+                if (editPrompts[questionNumber].value != answers[questionNumber]) {
+                    answeredQuestions++
+                    percentageCompleted = Math.round(answeredQuestions * 6.25);
+
+                    document.getElementById("progressFill").style.width = percentageCompleted + "%";
+                    document.getElementById("percentageCompleted").innerHTML = percentageCompleted + "%" + " completed";
+                }
+            }
+
+            console.log("New answer: " + editPrompts[questionNumber].value);//Display's the user's new answer to the console for debugging
+            answers[questionNumber] = editPrompts[questionNumber].value;//Saves the user's new answer to the answers array
+            editPrompts[questionNumber].value = "";//Resets the value of the text box
+
+            document.getElementById("question" + (questionNumber + 1)).innerHTML = questions[questionNumber] + ": " + answers[questionNumber];//Displays the user's new answer
+            console.log(answers);//Displays all the user's answers to the console for debugging
+        }
+    </script>
+</body>
+</html>
